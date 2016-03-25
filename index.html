@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
+    <!-- Edit to insert your title in browser tab -->
     <title>Searchable Map Template Demo</title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -23,8 +24,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <!-- Edit to insert your title above the map -->
           <a class='navbar-brand' href='index.html'>Searchable Map Template</a>
         </div>
+        <!-- Edit to change buttons in upper-right corner above map -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class='active'><a href="index.html">Map</a></li>
@@ -33,6 +36,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <!-- Edit to insert text about the map -->
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-4'>
@@ -48,6 +52,7 @@
               <label>
                 within
                 <select id='search_radius'>
+                  <!-- Edit to remove radius search choices from index.html; add new ones in maps_lib.js -->
                   <option value='400'>2 blocks</option>
                   <option value='805'>1/2 mile</option>
                   <option value='1610'>1 mile</option>
@@ -55,7 +60,7 @@
                 </select>
               </label>
             </p>
-
+            <!-- Edit to change title and filter tools for point layer; see also maps_lib.js -->
             <h4>
               Recycling services
             </h4>
@@ -102,6 +107,7 @@
             </div>
           </noscript>
           <div id='map_canvas'></div>
+          <!-- Edit to include source info details -->
           <p class='pull-right'>
             <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> by <a href='http://derekeder.com'>Derek Eder</a>.
         </p>
@@ -123,6 +129,12 @@
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
 
+        // IMPORTANT: Edit below to insert your data
+        // fusionTableId -- go to your Google Fusion Table, File > About this table, then select and use right-click to copy
+        // googleApiKey -- see directions in http://DataVizForAll.org
+        // locationColumn -- in your Google Fusion Table, go to tab of your raw data, use column you listed as location data
+        // map_center -- in Google Maps (http://www.google.com/maps), right-click any point and select What's Here to view any coordinates
+        // locationScope -- insert a major place name to limit Google Map searches to this area 
         $(function() {
           var myMap = new MapsLib({
             fusionTableId:      "1m4Ez9xyTGfY2CU6O-UgEcPzlS0rnzLU93e4Faa0",
