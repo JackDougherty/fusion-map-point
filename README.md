@@ -6,6 +6,10 @@
 ## Create your own
 - See Fusion Map template tutorials in *Data Visualization For All* book http://DataVizForAll.org
 
+## Credit
+- Template created by Derek Eder: http://derekeder.com/searchable_map_template/
+- Google Group for questions: https://groups.google.com/forum/#!forum/fusion-table-map-template
+
 ## Copyright and attribution
 
 Copyright (c) 2015 Derek Eder. Released under the MIT License.
