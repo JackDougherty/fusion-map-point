@@ -62,28 +62,28 @@
             </p>
             <!-- Edit to change title and filter tools for point layer; see also maps_lib.js -->
             <h4>
-              Recycling services
+              Public schools in Hartford
             </h4>
             <ul class='inputs-list unstyled'>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType1' />
                   <span class='filter-box filter-blue'></span>
-                  City drop-off location
+                  HPS District Schools
                 </label>
               </li>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType2' />
                   <span class='filter-box filter-green'></span>
-                  Private business
+                  Interdistrict Magnets
                 </label>
               </li>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType3' />
                   <span class='filter-box filter-red'></span>
-                  Hazardous materials
+                  Charter Schools
                 </label>
               </li>
             </ul>
@@ -134,14 +134,14 @@
         // googleApiKey -- click Get a Key at https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key
         // locationColumn -- insert name of column listed as the Location data in your Google Fusion Table
         // map_center -- for coordinates of any point in Google Maps (http://www.google.com/maps), right-click any point and select What's Here
-        // locationScope -- insert a major place name to limit Google Map searches to this area 
+        // locationScope -- insert a major place name to limit Google Map searches to this area
         $(function() {
           var myMap = new MapsLib({
-            fusionTableId:      "1m4Ez9xyTGfY2CU6O-UgEcPzlS0rnzLU93e4Faa0",
+            fusionTableId:      "1-RxY07FHa0V6vYIIuOX1MO_yhaymbVfNxLOYjw5F",
             googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
-            locationColumn:     "geometry",
-            map_center:         [41.8781136, -87.66677856445312],
-            locationScope:      "chicago"
+            locationColumn:     "Address",
+            map_center:         [41.76, -72.69],
+            locationScope:      "hartford"
           });
 
           var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
