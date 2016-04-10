@@ -6,7 +6,7 @@
 
         this.recordName = options.recordName || "result"; //for showing a count of results
         this.recordNamePlural = options.recordNamePlural || "results";
-        this.searchRadius = options.searchRadius || 805; //in meters ~ 1/2 mile
+        this.searchRadius = options.searchRadius || 1610; //in meters ~ 1 mile
 
         // the encrypted Table ID of your Fusion Table (found under File => About)
         this.fusionTableId = options.fusionTableId || "",
@@ -18,7 +18,7 @@
         // name of the location column in your Fusion Table.
         // NOTE: if your location column name has spaces in it, surround it with single quotes
         // example: locationColumn:     "'my location'",
-        this.locationColumn = options.locationColumn || "";
+        this.locationColumn = options.locationColumn || "geometry";
 
         // appends to all address searches if not present
         this.locationScope = options.locationScope || "";
@@ -170,15 +170,19 @@
         if ( $("#cbType1").is(':checked')) searchType += "1,";
         if ( $("#cbType2").is(':checked')) searchType += "2,";
         if ( $("#cbType3").is(':checked')) searchType += "3,";
+        if ( $("#cbType4").is(':checked')) searchType += "4,";
+        if ( $("#cbType5").is(':checked')) searchType += "5,";
         self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
 
         // TEXTUAL OPTION to filter checkboxes by text type
         // EDIT type_column and EXACT words to match your Google Fusion Table points AND index.html
         // var type_column = "'TypeText'";
         // var tempWhereClause = [];
-        // if ( $("#cbType1").is(':checked')) tempWhereClause.push("District");
-        // if ( $("#cbType2").is(':checked')) tempWhereClause.push("Magnet");
-        // if ( $("#cbType3").is(':checked')) tempWhereClause.push("Charter");
+        // if ( $("#cbType1").is(':checked')) tempWhereClause.push('District');
+        // if ( $("#cbType2").is(':checked')) tempWhereClause.push('Interdistrict Magnet');
+        // if ( $("#cbType3").is(':checked')) tempWhereClause.push('Charter');
+        // if ( $("#cbType4").is(':checked')) tempWhereClause.push('Technical');
+        // if ( $("#cbType5").is(':checked')) tempWhereClause.push('Other');
         // self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
         //-----end of custom filters-----

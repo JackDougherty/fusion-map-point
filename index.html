@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <!-- Edit to insert your title in browser tab -->
-    <title>Searchable Map Template Demo</title>
+    <title>fusion-map-point</title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content='' name='description' />
@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
           </button>
           <!-- Edit to insert your title above the map -->
-          <a class='navbar-brand' href='index.html'>Searchable Map Template</a>
+          <a class='navbar-brand' href='index.html'>Searchable Map Template fusion-map-point</a>
         </div>
         <!-- Edit to change buttons in upper-right corner above map -->
         <div class="navbar-collapse collapse">
@@ -40,7 +40,7 @@
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-4'>
-          <p>This is a demo of <a href='http://derekeder.com'>Derek Eder's</a> <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> using Google <a href='http://support.google.com/fusiontables/answer/2571232?hl=en&ref_topic=1652595'>Fusion Tables</a>. Use this section to give a little context to your map.</p>
+          <p>Search for Connecticut Public Schools 2014-15.</br>View <a href="http://github.com/jackdougherty/fusion-map-point">fusion-map-point code on GitHub</a>, based on <a href='http://derekeder.com'>Derek Eder's</a> <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> with Google <a href='http://support.google.com/fusiontables/answer/2571232?hl=en&ref_topic=1652595'>Fusion Tables</a>. See tutorial to build your own in Google Fusion Templates section of <a href="http://datavizforall.org">Data Visualization For All</a>.</p>
           <div class='well'>
             <h4>
               Address <small>(<a id='find_me' href='#'>find me</a>)</small>
@@ -52,7 +52,7 @@
               <label>
                 within
                 <select id='search_radius'>
-                  <!-- Edit to remove radius search choices from index.html; add new ones in maps_lib.js -->
+                  <!-- Edit to remove radius search choices from index.html. See more options in maps_lib.js -->
                   <option value='400'>2 blocks</option>
                   <option value='805'>1/2 mile</option>
                   <option value='1610'>1 mile</option>
@@ -60,16 +60,16 @@
                 </select>
               </label>
             </p>
-            <!-- Edit to change title and filter tools for point layer; see also maps_lib.js -->
+            <!-- Edit to change title and filter tools for point layer. Also add filter to maps_lib.js -->
             <h4>
-              Public schools in Hartford
+              Connecticut Public Schools
             </h4>
             <ul class='inputs-list unstyled'>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType1' />
                   <span class='filter-box filter-blue'></span>
-                  HPS District Schools
+                  District Schools
                 </label>
               </li>
               <li>
@@ -84,6 +84,20 @@
                   <input type='checkbox' id='cbType3' />
                   <span class='filter-box filter-red'></span>
                   Charter Schools
+                </label>
+              </li>
+              <li>
+                <label class='checkbox inline'>
+                  <input type='checkbox' id='cbType4' />
+                  <span class='filter-box filter-purple'></span>
+                  Technical Schools
+                </label>
+              </li>
+              <li>
+                <label class='checkbox inline'>
+                  <input type='checkbox' id='cbType5' />
+                  <span class='filter-box filter-yellow'></span>
+                  Other Public Schools
                 </label>
               </li>
             </ul>
@@ -108,8 +122,8 @@
           </noscript>
           <div id='map_canvas'></div>
           <!-- Edit to include source info details -->
-          <p class='pull-right'>
-            <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> by <a href='http://derekeder.com'>Derek Eder</a>.
+          <p>View <a href="https://www.google.com/fusiontables/DataSource?docid=1FMjVRb16OqlkeodL7onaQ5A7jamtpSY0TmHaa-WQ#rows:id=1">2014-15 source data</a> from <a href="https://data.ct.gov/Education/Education-Directory/9k2y-kqxn">CT Open Data</a>.
+            Based on <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> by <a href='http://derekeder.com'>Derek Eder</a>.
         </p>
         </div>
       </div>
@@ -137,11 +151,11 @@
         // locationScope -- insert a major place name to limit Google Map searches to this area
         $(function() {
           var myMap = new MapsLib({
-            fusionTableId:      "1-RxY07FHa0V6vYIIuOX1MO_yhaymbVfNxLOYjw5F",
+            fusionTableId:      "1FMjVRb16OqlkeodL7onaQ5A7jamtpSY0TmHaa-WQ",
             googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
             locationColumn:     "Address",
             map_center:         [41.76, -72.69],
-            locationScope:      "hartford"
+            locationScope:      "Connecticut"
           });
 
           var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
