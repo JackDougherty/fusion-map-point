@@ -1,4 +1,4 @@
-# Searchable Point Map template with Google Maps and Fusion Tables
+# Searchable Point Map template v1.4 with Google Maps and Fusion Tables
 
 ## Demos
 - http://jackdougherty.github.io/fusion-map-point/index.html
@@ -9,7 +9,7 @@
 - See tutorials in Fusion Map template section of *Data Visualization For All* book http://DataVizForAll.org
 
 ## Credit
-- Template created by Derek Eder: http://derekeder.com/searchable_map_template/
+- Searchable Map Template v1.4 created by Derek Eder: http://derekeder.com/searchable_map_template/
 - Google Group for questions: https://groups.google.com/forum/#!forum/fusion-table-map-template
 
 ## Copyright and attribution
